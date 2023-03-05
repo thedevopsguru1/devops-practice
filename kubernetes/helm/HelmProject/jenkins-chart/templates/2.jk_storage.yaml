@@ -26,14 +26,14 @@ spec:
   volumeMode: Filesystem
   local:
     path: {{ .Values.Storage.pvlocalPath }}
-  nodeAffinity:
-    required:
-      nodeSelectorTerms:
-      - matchExpressions:
-        - key: {{ .Values.Storage.nodeSelectorkey }}
-          operator: {{ .Values.Storage.nodeSelectoroperator }} 
-          values:
-          - {{ .Values.Storage.nodeSelectorvalues }}
+ # nodeAffinity:
+ #   required:
+ #     nodeSelectorTerms:
+ #     - matchExpressions:
+ #       - key: {{ .Values.Storage.nodeSelectorkey }}
+  #        operator: {{ .Values.Storage.nodeSelectoroperator }} 
+  #        values:
+   #       - {{ .Values.Storage.nodeSelectorvalues }}
   persistentVolumeReclaimPolicy: {{ .Values.Storage.pv_reclaimPolicy }} 
   # Specify the relevant PersistentVolumeClaim in the claimRef field of the PV so that other PVCs can not bind to it
   claimRef:
